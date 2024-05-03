@@ -1,8 +1,8 @@
-from typing import Generator, Iterator, List, Dict, Tuple, Union, Optional, overload, Type, Any, Callable
+from typing import Union, Callable
 
 from pathlib import Path
 
-from ..base import ProcessorBase, GenerateBase
+from ..base import ProcessorBase
 
 
 class RenameFilesByCustomFunction(ProcessorBase):

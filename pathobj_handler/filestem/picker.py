@@ -36,7 +36,7 @@ class PickFilesBySuffix(GenerateBase):
 
     def generate_handling(
             self,
-            src_dir: Optional[Union[str, pathlib.Path]] = None,
+            src_dir: Union[str, Path],
     ) -> Generator[pathlib.Path, None, None]:
         """
 

@@ -1,4 +1,4 @@
-from typing import Generator, Iterator, List, Dict, Tuple, Union, Optional, overload, Type, Any, Callable
+from typing import List, Union, Optional, Callable
 
 from pathlib import Path
 
@@ -6,7 +6,7 @@ from datetime import datetime
 import re
 from dateutil import parser
 
-from ..base import ProcessorBase, GenerateBase
+from ..base import ProcessorBase
 
 
 class FilterByCustomFunction(ProcessorBase):
