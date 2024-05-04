@@ -73,18 +73,18 @@ class PickFilesBySuffix(GenerateBase):
         return all_gen(globs)
 
 
-if __name__ == '__main__':
-    """
-    python -m pathobj_handler.filestem.picker
-    """
-    # fp = GetFilesBySuffix(['.txt', '.text'], recursive=True)
-    fp = PickFilesBySuffix('.txt', recursive=True)
-    # dir_path = './resource/sample'
-    dir_path = './resource'
-
-    file_path_gen = fp(dir_path)
-
-    file_list = list(file_path_gen)
-
-    print(file_list)
-    print(type(file_list[0]))
+# if __name__ == '__main__':
+#     """
+#     python -m pathobj_handler.filestem.picker
+#     """
+#     # fp = GetFilesBySuffix(['.txt', '.text'], recursive=True)
+#     fp = PickFilesBySuffix('.txt', recursive=True)
+#     # dir_path = './resource/sample'
+#     dir_path = './resource'
+#
+#     file_path_gen = fp(dir_path)
+#
+#     file_list = list(file_path_gen)
+#
+#     print(file_list)
+#     print(type(file_list[0]))

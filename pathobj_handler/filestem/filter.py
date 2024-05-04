@@ -60,9 +60,8 @@ class FilterWithDateRange(FilterByCustomFunction):
     ):
         """
         '20240410T150525_DDDDDD111111_AAA.txt'の'20240410T150525'の部分を正規表現で取り出して日付判定する
-
         :param re_time:
-            e.g. r'\d+T\d+'
+            e.g. r'/d+T/d+'
         :param dt_from:
             e.g. datetime(2024, 4, 5)
         :param dt_to:
@@ -82,7 +81,7 @@ class FilterWithDateRange(FilterByCustomFunction):
 
 
 class FilterWithRegExp(FilterByCustomFunction):
-    def __int__(
+    def __init__(
             self,
             re_list: List[str],
     ):
@@ -102,45 +101,45 @@ class FilterWithRegExp(FilterByCustomFunction):
         super().__init__(is_target)
 
 
-if __name__ == '__main__':
-    """
-    python -m pathobj_handler.filestem.filter
-    """
-    from pathobj_handler.filestem.picker import PickFilesBySuffix
-    from pathobj_handler.tool import make_pipeline
-
-    fp = PickFilesBySuffix(['.txt', '.text'], recursive=True)
-    dir_path = './resource'
-
-    fp_filter = make_pipeline(fp)
-    fp_gen = fp_filter(dir_path)
-    file_list = list(fp_gen)
-    print(file_list)
-
-    print('--------------------------------------')
-
-
-    # add filter
-    def is_target_1(stem: str) -> bool:
-        return 'hoge' in stem
-
-
-    fl_1 = FilterByCustomFunction(filter_method=is_target_1)
-
-    fp_filter = make_pipeline(fp, fl_1)
-    fp_gen = fp_filter(dir_path)
-    file_list = list(fp_gen)
-    print(file_list)
-
-    print('--------------------------------------')
-
-    fl_2 = FilterWithDateRange(
-        re_time=r'\d+T\d+',
-        dt_from=datetime(2024, 4, 11),
-        dt_to=datetime(2024, 4, 13),
-    )
-
-    fp_filter = make_pipeline(fp, fl_2)
-    fp_gen = fp_filter(dir_path)
-    file_list = list(fp_gen)
-    print(file_list)
+# if __name__ == '__main__':
+#     """
+#     python -m pathobj_handler.filestem.filter
+#     """
+#     from pathobj_handler.filestem.picker import PickFilesBySuffix
+#     from pathobj_handler.tool import make_pipeline
+#
+#     fp = PickFilesBySuffix(['.txt', '.text'], recursive=True)
+#     dir_path = './resource'
+#
+#     fp_filter = make_pipeline(fp)
+#     fp_gen = fp_filter(dir_path)
+#     file_list = list(fp_gen)
+#     print(file_list)
+#
+#     print('--------------------------------------')
+#
+#
+#     # add filter
+#     def is_target_1(stem: str) -> bool:
+#         return 'hoge' in stem
+#
+#
+#     fl_1 = FilterByCustomFunction(filter_method=is_target_1)
+#
+#     fp_filter = make_pipeline(fp, fl_1)
+#     fp_gen = fp_filter(dir_path)
+#     file_list = list(fp_gen)
+#     print(file_list)
+#
+#     print('--------------------------------------')
+#
+#     fl_2 = FilterWithDateRange(
+#         re_time=r'\d+T\d+',
+#         dt_from=datetime(2024, 4, 11),
+#         dt_to=datetime(2024, 4, 13),
+#     )
+#
+#     fp_filter = make_pipeline(fp, fl_2)
+#     fp_gen = fp_filter(dir_path)
+#     file_list = list(fp_gen)
+#     print(file_list)

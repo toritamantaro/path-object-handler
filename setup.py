@@ -21,5 +21,6 @@ setup(
     install_requires=[
         # 'PyYAML==5.4.1',
         'python-dateutil',
+        'pytest',
     ],
 )
