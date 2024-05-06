@@ -17,6 +17,10 @@ Class `PickFilesBySuffix` can be used to retrieve file objects in a given direct
 ### pathobj_handler.filestem.renamer
 * RenameFilesByCustomFunction
 
+  
+Class `PickFilesBySuffix` can be used to retrieve file objects in a given directory, and Class `FilterByCustomFunction` can be used to filter by file name.
+  
+
 ## Basic use
 
 Listing `*.txt` or `*.text` files in the given directory tree:
@@ -34,7 +38,7 @@ print(list(fp_gen))
 >[WindowsPath('resource/sample/20240410T150525_DDDDDD111111_AAA.txt'), WindowsPath('resource/sample/20240411T150625_DDDDDD111111_BBB.txt'), WindowsPath('resource/sample/20240412T150725_DDDD
 DD222222_AAA.txt'), WindowsPath('resource/sample/20240413T150825_DDDDDD333333_BBB.txt'), WindowsPath('resource/sample/fuga_01.txt'), WindowsPath('resource/sample/fuga_02.txt'), WindowsPath('resource/sample/hoge_01.text'), WindowsPath('resource/sample/hoge_02.text')]
 
-
+  
 Screening files in a given directory that contain the specified string in the filename:
 ```commandline
 from pathobj_handler.tool import make_pipeline
@@ -56,7 +60,7 @@ print(list(fp_gen))
 ```
 >[WindowsPath('resource/sample/hoge_01.text'), WindowsPath('resource/sample/hoge_02.text')]
 
-
+  
 Multiple filters are chained with `make_pipeline`:
 ```commandline
 from datetime import datetime
@@ -88,6 +92,8 @@ fp_gen = fp_filter(dir_path)
 print(list(fp_gen))
 ```
 >[WindowsPath('resource/sample/20240411T150625_DDDDDD111111_BBB.txt')]
+
+  
 
 
 

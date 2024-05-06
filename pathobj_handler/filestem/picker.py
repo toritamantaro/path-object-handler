@@ -26,10 +26,8 @@ class PickFilesBySuffix(GenerateBase):
         self._recursive = recursive
 
         self._file_suffix_list = []
-        # if type(file_suffix) is str:
         if isinstance(file_suffix, str):
             self._file_suffix_list.append(file_suffix)
-        # if type(file_suffix) is list:
         if isinstance(file_suffix, list):
             self._file_suffix_list = file_suffix
 
@@ -48,7 +46,6 @@ class PickFilesBySuffix(GenerateBase):
             p_src_dir = Path.cwd()
         elif isinstance(src_dir, str):
             p_src_dir = Path(src_dir)
-        # elif isinstance(src_dir, pathlib.Path):
         elif isinstance(src_dir, Path):
             p_src_dir = src_dir
         else:
