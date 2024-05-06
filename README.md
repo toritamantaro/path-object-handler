@@ -30,7 +30,6 @@ print(list(fp_gen))
 >[WindowsPath('resource/sample/20240410T150525_DDDDDD111111_AAA.txt'), WindowsPath('resource/sample/20240411T150625_DDDDDD111111_BBB.txt'), WindowsPath('resource/sample/20240412T150725_DDDD
 DD222222_AAA.txt'), WindowsPath('resource/sample/20240413T150825_DDDDDD333333_BBB.txt'), WindowsPath('resource/sample/fuga_01.txt'), WindowsPath('resource/sample/fuga_02.txt'), WindowsPath('resource/sample/hoge_01.text'), WindowsPath('resource/sample/hoge_02.text')]
 <br>
-<br>
   
 Screening files in a given directory that contain the specified string in the filename:
 ```commandline
@@ -52,7 +51,6 @@ fp_gen = fp_filter(dir_path)
 print(list(fp_gen))
 ```
 >[WindowsPath('resource/sample/hoge_01.text'), WindowsPath('resource/sample/hoge_02.text')]
-<br>
 <br>
   
 Multiple filters are chained with `make_pipeline`:
