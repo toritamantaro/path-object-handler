@@ -1,10 +1,4 @@
 
-
-
-
-
-Class `PickFilesBySuffix` can be used to retrieve file objects in a given directory, and Class `FilterByCustomFunction` can be used to filter by file name.
-
 ### pathobj_handler.filestem.picker
 * PickFilesBySuffix
 
@@ -16,7 +10,6 @@ Class `PickFilesBySuffix` can be used to retrieve file objects in a given direct
 
 ### pathobj_handler.filestem.renamer
 * RenameFilesByCustomFunction
-
   
 Class `PickFilesBySuffix` can be used to retrieve file objects in a given directory, and Class `FilterByCustomFunction` can be used to filter by file name.
   
