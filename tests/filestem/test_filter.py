@@ -1,5 +1,4 @@
 from pathlib import Path
-
 from datetime import datetime
 import re
 
@@ -7,15 +6,16 @@ from pathobj_handler.filestem.picker import PickFilesBySuffix
 from pathobj_handler.tool import make_pipeline
 from pathobj_handler.filestem.filter import FilterByCustomFunction, FilterWithDateRange, FilterWithRegExp
 
+dir_path = './resource'
 test_files = [
-    './resource/sample/20240410T150525_DDDDDD111111_AAA.txt',
-    './resource/sample/20240411T150625_DDDDDD111111_BBB.txt',
-    './resource/sample/20240412T150725_DDDDDD222222_AAA.txt',
-    './resource/sample/20240413T150825_DDDDDD333333_BBB.txt',
-    './resource/sample/fuga_01.txt',
-    './resource/sample/fuga_02.txt',
-    './resource/sample/hoge_01.text',
-    './resource/sample/hoge_02.text',
+    f"{dir_path}/sample/20240410T150525_DDDDDD111111_AAA.txt",
+    f"{dir_path}/sample/20240411T150625_DDDDDD111111_BBB.txt",
+    f"{dir_path}/sample/20240412T150725_DDDDDD222222_AAA.txt",
+    f"{dir_path}/sample/20240413T150825_DDDDDD333333_BBB.txt",
+    f"{dir_path}/sample/fuga_01.txt",
+    f"{dir_path}/sample/fuga_02.txt",
+    f"{dir_path}/sample/hoge_01.text",
+    f"{dir_path}/sample/hoge_02.text",
 ]
 
 
@@ -42,7 +42,6 @@ def test_filter_custom_function() -> None:
 
     ''' Processing by the module '''
     fp = PickFilesBySuffix(['.txt', '.text'], recursive=True)
-    dir_path = './resource'
 
     def is_target(stem: str) -> bool:
         return target_word in stem
@@ -71,7 +70,6 @@ def test_filter_date_range() -> None:
 
     ''' Processing by the module '''
     fp = PickFilesBySuffix(['.txt', '.text'], recursive=True)
-    dir_path = './resource'
 
     fl_1 = FilterWithDateRange(
         re_time=re_time,
@@ -98,7 +96,6 @@ def test_filter_reg_exp() -> None:
 
     ''' Processing by the module '''
     fp = PickFilesBySuffix(['.txt', '.text'], recursive=True)
-    dir_path = './resource'
 
     fl_1 = FilterWithRegExp(re_list=target_list)
 
