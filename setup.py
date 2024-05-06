@@ -16,10 +16,8 @@ setup(
         )
     ),
     python_requires='>=3.8',
-    # include_package_data=True,
     license='MIT',
     install_requires=[
-        # 'PyYAML==5.4.1',
         'python-dateutil',
         'pytest',
     ],

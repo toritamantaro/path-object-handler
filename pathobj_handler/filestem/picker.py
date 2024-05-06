@@ -7,7 +7,6 @@ from ..base import ProcessorBase, GenerateBase
 
 
 class PickFilesBySuffix(GenerateBase):
-    # PickFilesBySuffix
 
     def __init__(
             self,
