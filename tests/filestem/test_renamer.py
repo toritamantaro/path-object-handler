@@ -3,7 +3,7 @@ import re
 
 from pathobj_handler.filestem.picker import PickFilesBySuffix
 from pathobj_handler.tool import make_pipeline
-from pathobj_handler.filestem.renamer import RenameFilesByCustomFunction
+from pathobj_handler.filestem.renamer import RenameFilesByCustomFunction, RenamerWithReplaceStr
 
 dir_path = './resource'
 test_files = [
@@ -62,6 +62,43 @@ def test_renamer_custom_function() -> None:
     assert p_add_files == list(fp_gen)
 
     rn_2 = RenameFilesByCustomFunction(rename_method=del_stem)
+
+    fp_filter = make_pipeline(fp, rn_2)
+    fp_gen = fp_filter(dir_path)
+
+    # print(p_test_files)  # pytest -s
+    assert p_test_files == list(fp_gen)
+
+
+def test_renamer_replace_str() -> None:
+    for f in test_files:
+        path_check(f)
+
+    old_str = '_AAA'
+    new_str = '_ZZZ'
+    assert new_str  # new_str is not ''
+
+    ''' Answers to the test '''
+    p_test_files = [Path(f) for f in test_files]
+    p_replace_files = []
+    for p in p_test_files:
+        stem = p.stem
+        suffix = p.suffix
+        new_stem = stem.replace(old_str, new_str)
+        new_path = p.with_name(new_stem + suffix)
+        p_replace_files.append(new_path)
+
+    ''' Processing by the module '''
+    fp = PickFilesBySuffix(['.txt', '.text'], recursive=True)
+
+    rn_1 = RenamerWithReplaceStr(old=old_str, new=new_str)
+    fp_filter = make_pipeline(fp, rn_1)
+    fp_gen = fp_filter(dir_path)
+
+    # print(p_replace_files)  # pytest -s
+    assert p_replace_files == list(fp_gen)
+
+    rn_2 = RenamerWithReplaceStr(old=new_str, new=old_str)
 
     fp_filter = make_pipeline(fp, rn_2)
     fp_gen = fp_filter(dir_path)
