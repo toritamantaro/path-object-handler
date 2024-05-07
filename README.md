@@ -73,7 +73,7 @@ dir_path = './resource'
 fl_1 = FilterWithDateRange(
     re_time=r'\d+T\d+',
     dt_from=datetime(2024, 4, 11),
-    dt_to=datetime(2024, 4, 13),
+    dt_to=datetime(2024, 4, 14),
 )
 
 fl_2 = FilterWithRegExp(
@@ -88,7 +88,7 @@ fp_filter = make_pipeline(
 fp_gen = fp_filter(dir_path)
 print(list(fp_gen))
 ```
->[WindowsPath('resource/sample/20240411T150625_DDDDDD111111_BBB.txt')]
+>[WindowsPath('resource/sample/20240411T150625_DDDDDD111111_BBB.txt'), WindowsPath('resource/sample/20240413T150825_DDDDDD333333_BBB.txt')]
 <br>
   
 
