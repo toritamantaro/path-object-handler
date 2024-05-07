@@ -2,7 +2,7 @@ from setuptools import find_packages, setup
 
 setup(
     name='pathobj_handler',
-    version='1.0.0',
+    version='1.0.1',
     description='',
     long_description=open('README.md', encoding="utf-8").read(),
     long_description_content_type='text/markdown',
@@ -14,7 +14,7 @@ setup(
             exclude=['resource']
         )
     ),
-    python_requires='>=3.8',
+    python_requires='>=3.9',
     license='MIT',
     install_requires=[
         'python-dateutil',

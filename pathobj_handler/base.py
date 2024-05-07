@@ -85,7 +85,6 @@ class GenerateBase(metaclass=ABCMeta):
             paths: Iterator[Any],
     ) -> Generator[Any, None, None]:
         for p in paths:
-            # print(text)
             return self.generate_handling(p)
 
     @overload

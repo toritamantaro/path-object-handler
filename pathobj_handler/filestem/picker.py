@@ -62,7 +62,7 @@ class PickFilesBySuffix(GenerateBase):
                 wild_card = "**/" + wild_card
             globs.append(p_src_dir.glob(wild_card))
 
-        def all_gen(gen_list: list[Generator[Any, None, None]]) -> Generator[Any, None, None]:
+        def all_gen(gen_list: List[Generator[Any, None, None]]) -> Generator[Any, None, None]:
             for g in gen_list:
                 yield from g
 
