@@ -4,7 +4,6 @@ setup(
     name='pathobj_handler',
     version='1.0.0',
     description='',
-    description_content_type='',
     long_description=open('README.md', encoding="utf-8").read(),
     long_description_content_type='text/markdown',
     url='https://github.com/toritamantaro/path-object-handler',
