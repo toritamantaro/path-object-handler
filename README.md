@@ -13,7 +13,7 @@
 * RenameFilesByCustomFunction
 * RenamerWithReplaceStr
   
-<br>
+  
 `PickFilesBySuffix` can retrieve file objects in a given directory, and `FilterByCustomFunction` can filter file objects by their file names. 
   
 `pathobj_hundler` classes form a process chain with the `make_pipeline` function. 
