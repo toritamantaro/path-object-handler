@@ -40,3 +40,27 @@ class RenameFilesByCustomFunction(ProcessorBase):
         new_path = p_file.with_name(new_stem + suffix)
         p_r_file = p_file.rename(new_path)
         return p_r_file
+
+
+''' ---------- Examples of concrete renamers --------------- '''
+
+
+class RenamerWithReplaceStr(RenameFilesByCustomFunction):
+    def __init__(
+            self,
+            old: str,
+            new: str,
+    ):
+        """
+        与えられたファイルオブジェクトのstemに含まれる文字列のうち、oldで指定された文字列を全てnewに置き換える
+
+        :param old:
+            置換するターゲットとなる文字列
+        :param new:
+            置き換える文字列
+        """
+
+        def replace_stem(src_stem: str) -> str:
+            return src_stem.replace(old, new)
+
+        super().__init__(replace_stem)
