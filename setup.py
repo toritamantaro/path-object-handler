@@ -19,6 +19,5 @@ setup(
     license='MIT',
     install_requires=[
         'python-dateutil',
-        'pytest',
     ],
 )

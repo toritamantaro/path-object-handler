@@ -1,3 +1,4 @@
+## Series  
 
 ### pathobj_handler.filestem.picker
 * PickFilesBySuffix
@@ -11,8 +12,11 @@
 ### pathobj_handler.filestem.renamer
 * RenameFilesByCustomFunction
   
-Class `PickFilesBySuffix` can be used to retrieve file objects in a given directory, and Class `FilterByCustomFunction` can be used to filter by file name.
+
+`PickFilesBySuffix` can retrieve file objects in a given directory, and `FilterByCustomFunction` can filter file objects by their file names. 
   
+`pathobj_hundler` classes form a process chain with the `make_pipeline` function. 
+The chain can contain several filters, and each of the filters applies to a file object in an order. 
 
 ## Basic use
 
