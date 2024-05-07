@@ -14,7 +14,7 @@
 * RenamerWithReplaceStr
   
   
-`PickFilesBySuffix` can retrieve file objects (`pathlib.Path`) in a given directory, and `FilterByCustomFunction` can filter file objects by their file names. 
+`PickFilesBySuffix` can retrieve file objects (`pathlib.Path`) as a generator in a given directory, and `FilterByCustomFunction` can filter file objects by their file names. 
   
 `pathobj_hundler` classes form a process chain with the `make_pipeline` function. 
 The chain can contain several filters, and each of the filters applies to a file object in an order. 
