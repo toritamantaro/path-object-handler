@@ -1,3 +1,15 @@
+# pathobj-handler
+
+[![python](https://img.shields.io/badge/Python-3.9-3776AB.svg?style=flat&logo=python&logoColor=white)](https://www.python.org)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Downloads](https://static.pepy.tech/badge/pathobj_handler)](https://pepy.tech/project/pathobj_handler)
+
+## Installation
+
+```bash
+$ pip install pathobj-handler
+```
+
 ## Series  
 
 ### pathobj_handler.filestem.picker
@@ -18,6 +30,9 @@
   
 `pathobj_hundler` classes form a process chain with the `make_pipeline` function. 
 The chain can contain several filters, and each of the filters applies to a file object in an order. 
+
+
+
 
 ## Basic use
 
