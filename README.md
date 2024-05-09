@@ -1,7 +1,7 @@
 # pathobj-handler
 
 [![python](https://img.shields.io/badge/Python-3.9-3776AB.svg?style=flat&logo=python&logoColor=white)](https://www.python.org)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![License: MIT](https://img.shields.io/badge/License-MIT-brightgreen.svg)](https://opensource.org/licenses/MIT)
 [![Downloads](https://static.pepy.tech/badge/pathobj_handler)](https://pepy.tech/project/pathobj_handler)
 
 ## Installation
